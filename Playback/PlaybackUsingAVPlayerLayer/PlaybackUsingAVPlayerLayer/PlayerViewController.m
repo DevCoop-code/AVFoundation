@@ -47,8 +47,6 @@ static const NSString *ItemStatusContext;
 - (IBAction)loadAssetFromFile:(id)sender {
     NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"widowMakerPOTG" withExtension:@"mp4"];
     
-    NSLog(@"hankyo fileURL : %@", fileURL);
-    
     AVURLAsset *asset = [AVURLAsset URLAssetWithURL:fileURL options:nil];
     NSString *tracksKey = @"tracks";
     
@@ -78,7 +76,6 @@ static const NSString *ItemStatusContext;
 }
 
 - (IBAction)play:(id)sender {
-    NSLog(@"hankyo play event");
     [self.player play];
 }
 
