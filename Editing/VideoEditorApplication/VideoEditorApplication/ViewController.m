@@ -95,7 +95,7 @@
     // Set the time range of the first instruction to span the duration of the first video track.
     firstVideoCompositionInstruction.timeRange = CMTimeRangeMake(kCMTimeZero, firstVideoAssetTrack.timeRange.duration);
     // Set the time range of the second instruction to span the duration of the second video track.
-    secondVideoCompositionInstruction.timeRange = CMTimeRangeMake(kCMTimeZero, secondVideoAssetTrack.timeRange.duration);
+    secondVideoCompositionInstruction.timeRange = CMTimeRangeMake(firstVideoAssetTrack.timeRange.duration, secondVideoAssetTrack.timeRange.duration);
     
     AVMutableVideoCompositionLayerInstruction *firstVideoLayerInstruction = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoCompositionTrack];
     AVMutableVideoCompositionLayerInstruction *secondVideoLayerInstruction = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoCompositionTrack];
@@ -161,9 +161,15 @@
     // Create the export session with the composition and set the preset to the highest quality.
     AVAssetExportSession *exporter = [[AVAssetExportSession alloc] initWithAsset:mutableComposition presetName:AVAssetExportPresetHighestQuality];
     
+    NSError *error;
     // Set the desired output URL for the file created by the export process.
-    exporter.outputURL = [[[[NSFileManager defaultManager]URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:@YES error:nil] URLByAppendingPathComponent:[kDateFormatter stringFromDate:[NSDate date]]]URLByAppendingPathExtension:CFBridgingRelease(UTTypeCopyPreferredTagWithClass((CFStringRef)AVFileTypeQuickTimeMovie, kUTTagClassFilenameExtension))];
+    exporter.outputURL = [[[[NSFileManager defaultManager]URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:&error]
+                           URLByAppendingPathComponent:[kDateFormatter stringFromDate:[NSDate date]]]
+                          URLByAppendingPathExtension:CFBridgingRelease(UTTypeCopyPreferredTagWithClass((CFStringRef)AVFileTypeQuickTimeMovie, kUTTagClassFilenameExtension))];
     
+    if(error){
+        NSLog(@"Fail to create exporter outputURL");
+    }
     // Set the output file type to be a QuickTime movie.
     exporter.outputFileType = AVFileTypeQuickTimeMovie;
     exporter.shouldOptimizeForNetworkUse = YES;
