@@ -45,8 +45,18 @@
     AVAssetTrack *secondVideoAssetTrack = [[_secondAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
     AVAssetTrack *audioAssetTrack = [[_audioAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
     
-    [videoCompositionTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, firstVideoAssetTrack.timeRange.duration) ofTrack:firstVideoAssetTrack atTime:firstVideoAssetTrack.timeRange.duration error:nil];
-    [videoCompositionTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, secondVideoAssetTrack.timeRange.duration) ofTrack:secondVideoAssetTrack atTime:secondVideoAssetTrack.timeRange.duration error:nil];
+    if(firstVideoAssetTrack != nil){
+        NSLog(@"firstVideo AssetTrack is exists");
+    }
+    if(secondVideoAssetTrack != nil){
+        NSLog(@"secondVideo AssetTrack is exists");
+    }
+    if(audioAssetTrack != nil){
+        NSLog(@"audio AssetTrack is exists");
+    }
+    
+    [videoCompositionTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, firstVideoAssetTrack.timeRange.duration) ofTrack:firstVideoAssetTrack atTime:kCMTimeZero error:nil];
+    [videoCompositionTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, secondVideoAssetTrack.timeRange.duration) ofTrack:secondVideoAssetTrack atTime:firstVideoAssetTrack.timeRange.duration error:nil];
     [audioCompositionTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, CMTimeAdd(firstVideoAssetTrack.timeRange.duration, secondVideoAssetTrack.timeRange.duration)) ofTrack:audioAssetTrack atTime:kCMTimeZero error:nil];
     
     /*
@@ -67,9 +77,11 @@
     }
     
     if((isFirstVideoPortrait && !isSecondVideoPortrait) || (!isFirstVideoPortrait && isSecondVideoPortrait)){
-        UIAlertView *incompatibleVideoOrientationAlert = [[UIAlertView alloc]initWithTitle:@"Error!" message:@"Cannot combine a video shot in portrait mode with a video shot in landscape mode" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+        NSLog(@"Error Cannot combine a video shot in portrai tmode with a video shot in landscape mode");
+        //Deprecated in ios 9.0
+//        UIAlertView *incompatibleVideoOrientationAlert = [[UIAlertView alloc]initWithTitle:@"Error!" message:@"Cannot combine a video shot in portrait mode with a video shot in landscape mode" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
         
-        [incompatibleVideoOrientationAlert show];
+//        [incompatibleVideoOrientationAlert show];
         
         return;
     }
@@ -91,7 +103,7 @@
     // Set the transform of the first layer instruction to the preferred transform of the first video track.
     [firstVideoLayerInstruction setTransform:firstTransform atTime:kCMTimeZero];
     // Set the transform of the second layer instruction to the preferred transform of the second video track.
-    [secondVideoLayerInstruction setTransform:secondTransform atTime:kCMTimeZero];
+    [secondVideoLayerInstruction setTransform:secondTransform atTime:firstVideoAssetTrack.timeRange.duration];
     
     firstVideoCompositionInstruction.layerInstructions = @[firstVideoLayerInstruction];
     secondVideoCompositionInstruction.layerInstructions = @[secondVideoLayerInstruction];
@@ -105,12 +117,14 @@
     CGSize naturalSizeFirst, naturalSizeSecond;
     // If the first video asset was shot in portrait mode, then so was the second one if we made it here.
     if(isFirstVideoPortrait){
+        NSLog(@"First video asset was shot in portrait mode");
         //Invert the width and height for the video tracks to ensure that they display properly.
         naturalSizeFirst = CGSizeMake(firstVideoAssetTrack.naturalSize.height, firstVideoAssetTrack.naturalSize.width);
         naturalSizeSecond = CGSizeMake(secondVideoAssetTrack.naturalSize.height, secondVideoAssetTrack.naturalSize.width);
     }
     // If the videos weren't shot in portrait mode, we can just use their natural sizes.
     else{
+        NSLog(@"Videos weren't shot in portrait mode");
         naturalSizeFirst = firstVideoAssetTrack.naturalSize;
         naturalSizeSecond = secondVideoAssetTrack.naturalSize;
     }
@@ -148,35 +162,66 @@
     AVAssetExportSession *exporter = [[AVAssetExportSession alloc] initWithAsset:mutableComposition presetName:AVAssetExportPresetHighestQuality];
     
     // Set the desired output URL for the file created by the export process.
-    exporter.outputURL = [[[[NSFileManager defaultManager]URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:@YES error:nil]URLByAppendingPathComponent:[kDateFormatter stringFromDate:[NSDate date]]]URLByAppendingPathExtension:CFBridgingRelease(UTTypeCopyPreferredTagWithClass((CFStringRef)AVFileTypeQuickTimeMovie, kUTTagClassFilenameExtension))];
+    exporter.outputURL = [[[[NSFileManager defaultManager]URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:@YES error:nil] URLByAppendingPathComponent:[kDateFormatter stringFromDate:[NSDate date]]]URLByAppendingPathExtension:CFBridgingRelease(UTTypeCopyPreferredTagWithClass((CFStringRef)AVFileTypeQuickTimeMovie, kUTTagClassFilenameExtension))];
     
     // Set the output file type to be a QuickTime movie.
     exporter.outputFileType = AVFileTypeQuickTimeMovie;
     exporter.shouldOptimizeForNetworkUse = YES;
     exporter.videoComposition = mutableVideoComposition;
     
+    NSLog(@"export asynchronous");
     // Asynchronously export the composition to a video file and save this file to the camera roll once export completes.
     [exporter exportAsynchronouslyWithCompletionHandler:^{
         dispatch_async(dispatch_get_main_queue(), ^{
             if(exporter.status == AVAssetExportSessionStatusCompleted){
-                ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc]init];
-                
-                if([assetsLibrary videoAtPathIsCompatibleWithSavedPhotosAlbum:exporter.outputURL]){
-                    [assetsLibrary writeVideoAtPathToSavedPhotosAlbum:exporter.outputURL completionBlock:nil];
-                }
+                NSLog(@"exporter session status completed");
+//                ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc]init];
+//
+//                if([assetsLibrary videoAtPathIsCompatibleWithSavedPhotosAlbum:exporter.outputURL]){
+//                    [assetsLibrary writeVideoAtPathToSavedPhotosAlbum:exporter.outputURL completionBlock:nil];
+//                }
+                [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+                    switch (status) {
+                        case PHAuthorizationStatusAuthorized:{
+                            NSLog(@"PHAuthorizationStatusAuthorized");
+                            __block PHObjectPlaceholder *placeholder;
+                            [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+                                PHAssetChangeRequest *createAssetRequest = [PHAssetChangeRequest creationRequestForAssetFromImageAtFileURL:exporter.outputURL];
+                                placeholder = [createAssetRequest placeholderForCreatedAsset];
+                            } completionHandler:^(BOOL success, NSError * _Nullable error) {
+                                if(success){
+                                    NSLog(@"Success!!");
+                                }else{
+                                    NSLog(@"Fail!!");
+                                }
+                            }];
+                        }
+                            break;
+                            
+                        case PHAuthorizationStatusRestricted:
+                            NSLog(@"PHAuthorizationStatusRestricted");
+                            break;
+                            
+                        case PHAuthorizationStatusDenied:
+                            NSLog(@"PHAuthorizationStatusDenied");
+                            break;
+                        case PHAuthorizationStatusNotDetermined:
+                            NSLog(@"PHAuthorizationStatusNotDetermined");
+                            break;
+                    }
+                }];
+            }
+            else if(exporter.status == AVAssetExportSessionStatusUnknown){
+                NSLog(@"exporter session status unknown");
+            }
+            else if(exporter.status == AVAssetExportSessionStatusWaiting){
+                NSLog(@"exporter session status waiting");
+            }
+            else if(exporter.status == AVAssetExportSessionStatusFailed){
+                NSLog(@"exporter session status Failed");
             }
         });
     }];
-}
-
-- (IBAction)loadAsset:(id)sender {
-    NSURL *firstFileURL = [[NSBundle mainBundle] URLForResource:@"widowMakerPOTG" withExtension:@"mp4"];
-    NSURL *secondFileURL = [[NSBundle mainBundle] URLForResource:@"tracerPOTG" withExtension:@"mp4"];
-    NSURL *audioFileURL = [[NSBundle mainBundle] URLForResource:@"SamuraiHeart" withExtension:@"mp3"];
-    
-    _firstAsset = [AVURLAsset URLAssetWithURL:firstFileURL options:nil];
-    _secondAsset = [AVURLAsset URLAssetWithURL:secondFileURL options:nil];
-    _audioAsset = [AVURLAsset URLAssetWithURL:audioFileURL options:nil];
 }
 
 

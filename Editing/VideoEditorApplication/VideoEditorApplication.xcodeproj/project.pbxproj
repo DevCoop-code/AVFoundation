@@ -18,6 +18,7 @@
 		781D4D6B21CF020A00954523 /* tracerPOTG.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 781D4D6A21CF020A00954523 /* tracerPOTG.mp4 */; };
 		781D4D6D21CF066700954523 /* SamuraiHeart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 781D4D6C21CF066700954523 /* SamuraiHeart.mp3 */; };
 		78C0B3ED21CFE124004199C3 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781D4D6F21CF5DFB00954523 /* CoreServices.framework */; };
+		78E36C3B21DB88DE0073428A /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E36C3A21DB88DD0073428A /* Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		781D4D6C21CF066700954523 /* SamuraiHeart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SamuraiHeart.mp3; sourceTree = "<group>"; };
 		781D4D6F21CF5DFB00954523 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		781D4D7121CF64A200954523 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		78E36C3A21DB88DD0073428A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E36C3B21DB88DE0073428A /* Photos.framework in Frameworks */,
 				78C0B3ED21CFE124004199C3 /* CoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +131,7 @@
 		781D4D6E21CF5DFB00954523 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78E36C3A21DB88DD0073428A /* Photos.framework */,
 				781D4D7121CF64A200954523 /* AssetsLibrary.framework */,
 				781D4D6F21CF5DFB00954523 /* CoreServices.framework */,
 			);
@@ -405,7 +409,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.hangyojeong.PhotoEditorUsedPhotoKit;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hangyojeong.MediaEditing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -423,7 +427,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.hangyojeong.PhotoEditorUsedPhotoKit;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hangyojeong.MediaEditing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
