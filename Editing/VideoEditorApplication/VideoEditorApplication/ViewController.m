@@ -181,41 +181,41 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if(exporter.status == AVAssetExportSessionStatusCompleted){
                 NSLog(@"exporter session status completed");
-//                ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc]init];
+                ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc]init];
+
+                if([assetsLibrary videoAtPathIsCompatibleWithSavedPhotosAlbum:exporter.outputURL]){
+                    [assetsLibrary writeVideoAtPathToSavedPhotosAlbum:exporter.outputURL completionBlock:nil];
+                }
+//                [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+//                    switch (status) {
+//                        case PHAuthorizationStatusAuthorized:{
+//                            NSLog(@"PHAuthorizationStatusAuthorized");
+//                            __block PHObjectPlaceholder *placeholder;
+//                            [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+//                                PHAssetChangeRequest *createAssetRequest = [PHAssetChangeRequest creationRequestForAssetFromImageAtFileURL:exporter.outputURL];
+//                                placeholder = [createAssetRequest placeholderForCreatedAsset];
+//                            } completionHandler:^(BOOL success, NSError * _Nullable error) {
+//                                if(success){
+//                                    NSLog(@"Success!!");
+//                                }else{
+//                                    NSLog(@"Fail!!");
+//                                }
+//                            }];
+//                        }
+//                            break;
 //
-//                if([assetsLibrary videoAtPathIsCompatibleWithSavedPhotosAlbum:exporter.outputURL]){
-//                    [assetsLibrary writeVideoAtPathToSavedPhotosAlbum:exporter.outputURL completionBlock:nil];
-//                }
-                [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-                    switch (status) {
-                        case PHAuthorizationStatusAuthorized:{
-                            NSLog(@"PHAuthorizationStatusAuthorized");
-                            __block PHObjectPlaceholder *placeholder;
-                            [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-                                PHAssetChangeRequest *createAssetRequest = [PHAssetChangeRequest creationRequestForAssetFromImageAtFileURL:exporter.outputURL];
-                                placeholder = [createAssetRequest placeholderForCreatedAsset];
-                            } completionHandler:^(BOOL success, NSError * _Nullable error) {
-                                if(success){
-                                    NSLog(@"Success!!");
-                                }else{
-                                    NSLog(@"Fail!!");
-                                }
-                            }];
-                        }
-                            break;
-                            
-                        case PHAuthorizationStatusRestricted:
-                            NSLog(@"PHAuthorizationStatusRestricted");
-                            break;
-                            
-                        case PHAuthorizationStatusDenied:
-                            NSLog(@"PHAuthorizationStatusDenied");
-                            break;
-                        case PHAuthorizationStatusNotDetermined:
-                            NSLog(@"PHAuthorizationStatusNotDetermined");
-                            break;
-                    }
-                }];
+//                        case PHAuthorizationStatusRestricted:
+//                            NSLog(@"PHAuthorizationStatusRestricted");
+//                            break;
+//
+//                        case PHAuthorizationStatusDenied:
+//                            NSLog(@"PHAuthorizationStatusDenied");
+//                            break;
+//                        case PHAuthorizationStatusNotDetermined:
+//                            NSLog(@"PHAuthorizationStatusNotDetermined");
+//                            break;
+//                    }
+//                }];
             }
             else if(exporter.status == AVAssetExportSessionStatusUnknown){
                 NSLog(@"exporter session status unknown");
