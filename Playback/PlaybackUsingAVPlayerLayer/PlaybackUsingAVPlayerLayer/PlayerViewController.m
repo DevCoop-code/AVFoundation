@@ -34,6 +34,9 @@ static const NSString *ItemStatusContext;
 - (void)viewDidLoad{
     [super viewDidLoad];
     [self syncUI];
+    
+    //Make sound when ios silence
+    [[AVAudioSession sharedInstance]setCategory:AVAudioSessionCategoryPlayback error:nil];
 }
 
 - (void)syncUI{
@@ -58,6 +61,7 @@ static const NSString *ItemStatusContext;
             
             if(status == AVKeyValueStatusLoaded){
                 self.playerItem = [AVPlayerItem playerItemWithAsset:asset];
+                
                 //ensure that this is done before the playeritem is associated with the player
                 [self.playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionInitial context:&ItemStatusContext];
                 
