@@ -18,6 +18,7 @@
 		78670C2C21DF8519000CD1C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78670C2B21DF8519000CD1C4 /* UIKit.framework */; };
 		78670C2E21DF8570000CD1C4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78670C2D21DF8570000CD1C4 /* MobileCoreServices.framework */; };
 		78670C3021DF85ED000CD1C4 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78670C2F21DF85ED000CD1C4 /* AssetsLibrary.framework */; };
+		789E1F2221E05C290028FE73 /* AddBorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789E1F2121E05C290028FE73 /* AddBorderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		78670C2B21DF8519000CD1C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		78670C2D21DF8570000CD1C4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		78670C2F21DF85ED000CD1C4 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		789E1F2021E05B640028FE73 /* AddBorderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddBorderViewController.h; sourceTree = "<group>"; };
+		789E1F2121E05C290028FE73 /* AddBorderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddBorderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				78670C0F21DF84B9000CD1C4 /* LaunchScreen.storyboard */,
 				78670C1221DF84B9000CD1C4 /* Info.plist */,
 				78670C1321DF84B9000CD1C4 /* main.m */,
+				789E1F2021E05B640028FE73 /* AddBorderViewController.h */,
+				789E1F2121E05C290028FE73 /* AddBorderViewController.m */,
 			);
 			path = AddingBorderToVideo;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			files = (
 				78670C0921DF84B7000CD1C4 /* CommonVideoViewController.m in Sources */,
 				78670C1421DF84B9000CD1C4 /* main.m in Sources */,
+				789E1F2221E05C290028FE73 /* AddBorderViewController.m in Sources */,
 				78670C0621DF84B7000CD1C4 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
