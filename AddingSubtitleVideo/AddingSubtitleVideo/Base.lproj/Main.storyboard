@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Subtitle View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AddSubtitleViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3p-BW-UrM">
+                                <rect key="frame" x="73" y="140" width="229" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Add Video Asset"/>
+                                <connections>
+                                    <action selector="loadAsset:" destination="BYZ-38-t0r" eventType="touchDown" id="Bdy-cW-8ih"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle Text : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dT7-PM-akJ">
+                                <rect key="frame" x="0.0" y="323" width="109" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="MO9-Ng-Alh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ju6-lM-nF8">
+                                <rect key="frame" x="95" y="496" width="185" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Generate Output"/>
+                                <connections>
+                                    <action selector="generateOutput:" destination="BYZ-38-t0r" eventType="touchDown" id="uF6-XQ-PdS"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZEH-h2-YHi">
+                                <rect key="frame" x="117" y="322" width="242" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ju6-lM-nF8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="95" id="7Ab-iU-mrC"/>
+                            <constraint firstItem="dT7-PM-akJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="323" id="8PQ-jr-DN9"/>
+                            <constraint firstItem="dT7-PM-akJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9Pl-nD-yHM"/>
+                            <constraint firstItem="u3p-BW-UrM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="Tmc-hJ-fAE"/>
+                            <constraint firstItem="ZEH-h2-YHi" firstAttribute="leading" secondItem="dT7-PM-akJ" secondAttribute="trailing" constant="8" symbolic="YES" id="VHU-pg-DkR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ju6-lM-nF8" secondAttribute="bottom" constant="137" id="Xs9-hA-jZ6"/>
+                            <constraint firstItem="ZEH-h2-YHi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="YFN-1Z-Ed7"/>
+                            <constraint firstItem="u3p-BW-UrM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="aCw-Hn-V4T"/>
+                            <constraint firstItem="ZEH-h2-YHi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="322" id="laF-PY-KH1"/>
+                            <constraint firstItem="u3p-BW-UrM" firstAttribute="centerX" secondItem="Ju6-lM-nF8" secondAttribute="centerX" id="pRa-uY-RKH"/>
+                            <constraint firstItem="u3p-BW-UrM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sNB-9o-LH8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="subText" destination="ZEH-h2-YHi" id="99d-1g-RRH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>

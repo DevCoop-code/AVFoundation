@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		789E1F3121E0805E0028FE73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 789E1F3021E0805E0028FE73 /* AppDelegate.m */; };
+		789E1F3421E0805E0028FE73 /* AddSubtitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789E1F3321E0805E0028FE73 /* AddSubtitleViewController.m */; };
+		789E1F3721E0805E0028FE73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 789E1F3521E0805E0028FE73 /* Main.storyboard */; };
+		789E1F3921E080600028FE73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789E1F3821E080600028FE73 /* Assets.xcassets */; };
+		789E1F3C21E080600028FE73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 789E1F3A21E080600028FE73 /* LaunchScreen.storyboard */; };
+		789E1F3F21E080600028FE73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 789E1F3E21E080600028FE73 /* main.m */; };
+		789E1F4921E080600028FE73 /* AddingSubtitleVideoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 789E1F4821E080600028FE73 /* AddingSubtitleVideoTests.m */; };
+		789E1F5521E080CB0028FE73 /* CommonVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789E1F5421E080CB0028FE73 /* CommonVideoViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		789E1F4521E080600028FE73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 789E1F2421E0805E0028FE73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 789E1F2B21E0805E0028FE73;
+			remoteInfo = AddingSubtitleVideo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		789E1F2C21E0805E0028FE73 /* AddingSubtitleVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddingSubtitleVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		789E1F2F21E0805E0028FE73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		789E1F3021E0805E0028FE73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		789E1F3221E0805E0028FE73 /* AddSubtitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddSubtitleViewController.h; sourceTree = "<group>"; };
+		789E1F3321E0805E0028FE73 /* AddSubtitleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddSubtitleViewController.m; sourceTree = "<group>"; };
+		789E1F3621E0805E0028FE73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		789E1F3821E080600028FE73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		789E1F3B21E080600028FE73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		789E1F3D21E080600028FE73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		789E1F3E21E080600028FE73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		789E1F4421E080600028FE73 /* AddingSubtitleVideoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddingSubtitleVideoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		789E1F4821E080600028FE73 /* AddingSubtitleVideoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddingSubtitleVideoTests.m; sourceTree = "<group>"; };
+		789E1F4A21E080600028FE73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		789E1F5321E080CB0028FE73 /* CommonVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonVideoViewController.h; path = ../../AddingBorderToVideo/AddingBorderToVideo/CommonVideoViewController.h; sourceTree = "<group>"; };
+		789E1F5421E080CB0028FE73 /* CommonVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonVideoViewController.m; path = ../../AddingBorderToVideo/AddingBorderToVideo/CommonVideoViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		789E1F2921E0805E0028FE73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		789E1F4121E080600028FE73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		789E1F2321E0805E0028FE73 = {
+			isa = PBXGroup;
+			children = (
+				789E1F2E21E0805E0028FE73 /* AddingSubtitleVideo */,
+				789E1F4721E080600028FE73 /* AddingSubtitleVideoTests */,
+				789E1F2D21E0805E0028FE73 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		789E1F2D21E0805E0028FE73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				789E1F2C21E0805E0028FE73 /* AddingSubtitleVideo.app */,
+				789E1F4421E080600028FE73 /* AddingSubtitleVideoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		789E1F2E21E0805E0028FE73 /* AddingSubtitleVideo */ = {
+			isa = PBXGroup;
+			children = (
+				789E1F5321E080CB0028FE73 /* CommonVideoViewController.h */,
+				789E1F5421E080CB0028FE73 /* CommonVideoViewController.m */,
+				789E1F2F21E0805E0028FE73 /* AppDelegate.h */,
+				789E1F3021E0805E0028FE73 /* AppDelegate.m */,
+				789E1F3221E0805E0028FE73 /* AddSubtitleViewController.h */,
+				789E1F3321E0805E0028FE73 /* AddSubtitleViewController.m */,
+				789E1F3521E0805E0028FE73 /* Main.storyboard */,
+				789E1F3821E080600028FE73 /* Assets.xcassets */,
+				789E1F3A21E080600028FE73 /* LaunchScreen.storyboard */,
+				789E1F3D21E080600028FE73 /* Info.plist */,
+				789E1F3E21E080600028FE73 /* main.m */,
+			);
+			path = AddingSubtitleVideo;
+			sourceTree = "<group>";
+		};
+		789E1F4721E080600028FE73 /* AddingSubtitleVideoTests */ = {
+			isa = PBXGroup;
+			children = (
+				789E1F4821E080600028FE73 /* AddingSubtitleVideoTests.m */,
+				789E1F4A21E080600028FE73 /* Info.plist */,
+			);
+			path = AddingSubtitleVideoTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		789E1F2B21E0805E0028FE73 /* AddingSubtitleVideo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 789E1F4D21E080600028FE73 /* Build configuration list for PBXNativeTarget "AddingSubtitleVideo" */;
+			buildPhases = (
+				789E1F2821E0805E0028FE73 /* Sources */,
+				789E1F2921E0805E0028FE73 /* Frameworks */,
+				789E1F2A21E0805E0028FE73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AddingSubtitleVideo;
+			productName = AddingSubtitleVideo;
+			productReference = 789E1F2C21E0805E0028FE73 /* AddingSubtitleVideo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		789E1F4321E080600028FE73 /* AddingSubtitleVideoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 789E1F5021E080600028FE73 /* Build configuration list for PBXNativeTarget "AddingSubtitleVideoTests" */;
+			buildPhases = (
+				789E1F4021E080600028FE73 /* Sources */,
+				789E1F4121E080600028FE73 /* Frameworks */,
+				789E1F4221E080600028FE73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				789E1F4621E080600028FE73 /* PBXTargetDependency */,
+			);
+			name = AddingSubtitleVideoTests;
+			productName = AddingSubtitleVideoTests;
+			productReference = 789E1F4421E080600028FE73 /* AddingSubtitleVideoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		789E1F2421E0805E0028FE73 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = HanGyoJeong;
+				TargetAttributes = {
+					789E1F2B21E0805E0028FE73 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					789E1F4321E080600028FE73 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 789E1F2B21E0805E0028FE73;
+					};
+				};
+			};
+			buildConfigurationList = 789E1F2721E0805E0028FE73 /* Build configuration list for PBXProject "AddingSubtitleVideo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 789E1F2321E0805E0028FE73;
+			productRefGroup = 789E1F2D21E0805E0028FE73 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				789E1F2B21E0805E0028FE73 /* AddingSubtitleVideo */,
+				789E1F4321E080600028FE73 /* AddingSubtitleVideoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		789E1F2A21E0805E0028FE73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				789E1F3C21E080600028FE73 /* LaunchScreen.storyboard in Resources */,
+				789E1F3921E080600028FE73 /* Assets.xcassets in Resources */,
+				789E1F3721E0805E0028FE73 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		789E1F4221E080600028FE73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		789E1F2821E0805E0028FE73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				789E1F3421E0805E0028FE73 /* AddSubtitleViewController.m in Sources */,
+				789E1F5521E080CB0028FE73 /* CommonVideoViewController.m in Sources */,
+				789E1F3F21E080600028FE73 /* main.m in Sources */,
+				789E1F3121E0805E0028FE73 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		789E1F4021E080600028FE73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				789E1F4921E080600028FE73 /* AddingSubtitleVideoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		789E1F4621E080600028FE73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 789E1F2B21E0805E0028FE73 /* AddingSubtitleVideo */;
+			targetProxy = 789E1F4521E080600028FE73 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		789E1F3521E0805E0028FE73 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				789E1F3621E0805E0028FE73 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		789E1F3A21E080600028FE73 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				789E1F3B21E080600028FE73 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		789E1F4B21E080600028FE73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		789E1F4C21E080600028FE73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		789E1F4E21E080600028FE73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KYV3CSY2F3;
+				INFOPLIST_FILE = AddingSubtitleVideo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hangyojeong.AddingSubtitleVideo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		789E1F4F21E080600028FE73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KYV3CSY2F3;
+				INFOPLIST_FILE = AddingSubtitleVideo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hangyojeong.AddingSubtitleVideo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		789E1F5121E080600028FE73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AddingSubtitleVideoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hangyojeong.AddingSubtitleVideoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AddingSubtitleVideo.app/AddingSubtitleVideo";
+			};
+			name = Debug;
+		};
+		789E1F5221E080600028FE73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AddingSubtitleVideoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hangyojeong.AddingSubtitleVideoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AddingSubtitleVideo.app/AddingSubtitleVideo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		789E1F2721E0805E0028FE73 /* Build configuration list for PBXProject "AddingSubtitleVideo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				789E1F4B21E080600028FE73 /* Debug */,
+				789E1F4C21E080600028FE73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		789E1F4D21E080600028FE73 /* Build configuration list for PBXNativeTarget "AddingSubtitleVideo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				789E1F4E21E080600028FE73 /* Debug */,
+				789E1F4F21E080600028FE73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		789E1F5021E080600028FE73 /* Build configuration list for PBXNativeTarget "AddingSubtitleVideoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				789E1F5121E080600028FE73 /* Debug */,
+				789E1F5221E080600028FE73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 789E1F2421E0805E0028FE73 /* Project object */;
+}
